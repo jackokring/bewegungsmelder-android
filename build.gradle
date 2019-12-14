@@ -1,10 +1,23 @@
+allprojects {
+    repositories {
+        google()
+
+        // If you're using a version of Gradle lower than 4.1, you must
+        // instead use:
+        //
+        // maven {
+        //     url 'https://maven.google.com'
+        // }
+    }
+}
+
 buildscript {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.5.2'
     }
 }
 apply plugin: 'com.android.application'
@@ -12,11 +25,11 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
     }
-    compileSdkVersion 23
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 23
+        minSdkVersion 19
+        targetSdkVersion 29
     }
     useLibrary 'org.apache.http.legacy'
 }
@@ -24,5 +37,5 @@ android {
 dependencies {
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     // The Support Repository (separate from the corresponding library) can be found in the Extras category.
-    implementation 'com.android.support:appcompat-v7:23.4.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0+'
 }

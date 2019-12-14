@@ -9,9 +9,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentPagerAdapter;
+import androidx.appcompat.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.ActionBarActivity;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +35,7 @@ import de.arnefeil.bewegungsmelder.tools.FavoriteLoader;
 import de.arnefeil.bewegungsmelder.tools.FilterLoader;
 import de.arnefeil.bewegungsmelder.tools.UpdateChecker;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     private EventLoader eventLoader;
     private FilterLoader filterLoader;
