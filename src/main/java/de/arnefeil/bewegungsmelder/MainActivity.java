@@ -38,11 +38,12 @@ import de.arnefeil.bewegungsmelder.tools.UpdateChecker;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EventLoader eventLoader;
+    private static MainActivity fabulous;//static singleton
+    private static EventLoader eventLoader;
     private FilterLoader filterLoader;
     private FavoriteLoader favoriteLoader;
     private Menu menu;
-    private ArrayList<Date> dates;
+    private static ArrayList<Date> dates;
     private int[] dialogSize;
     private FrameLayout progessView;
     private TextView mTextViewProgress;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     EventsPageAdapter eventsPageAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        fabulous = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.viewPager = (ViewPager) findViewById(R.id.pager);
@@ -140,8 +142,8 @@ public class MainActivity extends AppCompatActivity {
         return this.dialogSize;
     }
 
-    public EventLoader getEventLoader() {
-        return this.eventLoader;
+    public static EventLoader getEventLoader() {
+        return eventLoader;
     }
 
     private void checkUpdateTimer() {
@@ -271,10 +273,10 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_event_list, container, false);
-            Date date = MainActivity.this.dates.get(getArguments().getInt(ARG_SECTION_NUMBER));
-            ArrayList<Event> events = MainActivity.this.getEventLoader().getEvents(date);
+            Date date = MainActivity.dates.get(getArguments().getInt(ARG_SECTION_NUMBER));
+            ArrayList<Event> events = MainActivity.getEventLoader().getEvents(date);
             ListView lvEvents = (ListView) rootView.findViewById(R.id.listView);
-            lvEvents.setAdapter(new EventAdapter(MainActivity.this, R.layout.listview_event, events));
+            lvEvents.setAdapter(new EventAdapter(fabulous, R.layout.listview_event, events));
             return rootView;
         }
 
