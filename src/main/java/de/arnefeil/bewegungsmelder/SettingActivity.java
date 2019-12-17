@@ -10,7 +10,8 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,7 @@ import de.arnefeil.bewegungsmelder.models.MyPreference;
 /**
  * Created by arne on 10/3/13.
  */
-public class SettingActivity extends ActionBarActivity {
+public class SettingActivity extends AppCompatActivity {
 
     private SettingsAdapter settingsAdapter;
 

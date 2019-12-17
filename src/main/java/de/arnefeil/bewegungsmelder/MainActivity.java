@@ -8,10 +8,12 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import androidx.appcompat.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.app.Activity;
+//import android.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +37,7 @@ import de.arnefeil.bewegungsmelder.tools.FavoriteLoader;
 import de.arnefeil.bewegungsmelder.tools.FilterLoader;
 import de.arnefeil.bewegungsmelder.tools.UpdateChecker;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private EventLoader eventLoader;
     private FilterLoader filterLoader;
@@ -63,7 +65,8 @@ public class MainActivity extends Activity {
         this.filterLoader = new FilterLoader(this);
         this.favoriteLoader = new FavoriteLoader(this);
 
-        this.eventsPageAdapter = new EventsPageAdapter(getSupportFragmentManager());
+        this.eventsPageAdapter = new EventsPageAdapter(
+                getSupportFragmentManager());
         this.viewPager.setAdapter(this.eventsPageAdapter);
         this.switchToPage(Date.today());
         this.getSupportActionBar().setTitle("Events");
@@ -224,17 +227,13 @@ public class MainActivity extends Activity {
         super.onPause();
         this.favoriteLoader.saveFavorites();
     }
-    
 
-
-    public class EventsPageAdapter extends FragmentPagerAdapter {
-
+    public class EventsPageAdapter extends PagerAdapter {
 
         public EventsPageAdapter(FragmentManager fm) {
-            super(fm);
+            super(/* fm */);
         }
 
-        @Override
         public Fragment getItem(int position) {
             Fragment fragment = new EventsSectionFragment();
             Bundle args = new Bundle();
@@ -246,6 +245,11 @@ public class MainActivity extends Activity {
         @Override
         public int getCount() {
             return MainActivity.this.dates.size();
+        }
+
+        @Override
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+            return false;//TODO
         }
 
         @Override
