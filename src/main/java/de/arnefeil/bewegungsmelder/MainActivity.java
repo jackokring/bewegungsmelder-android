@@ -7,11 +7,10 @@ import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.app.Fragment;
-//import android.app.FragmentManager;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.annotation.NonNull;
-import androidx.viewpager.widget.PagerAdapter;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -228,10 +227,10 @@ public class MainActivity extends AppCompatActivity {
         this.favoriteLoader.saveFavorites();
     }
 
-    public class EventsPageAdapter extends PagerAdapter {
+    public class EventsPageAdapter extends FragmentPagerAdapter {
 
         public EventsPageAdapter(FragmentManager fm) {
-            super(/* fm */);
+            super(fm);
         }
 
         public Fragment getItem(int position) {
@@ -264,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ValidFragment")
-    public class EventsSectionFragment extends Fragment {
+    public static class EventsSectionFragment extends Fragment {
 
         public static final String ARG_SECTION_NUMBER = "section_number";
 
