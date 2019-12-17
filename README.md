@@ -1,5 +1,16 @@
-Bewegungsmelder
-===============
+Melder (Events App)
+=
+
+The application is in **alpha testing** for London alternative events.
+The information below is for the Hamburg download and will be updated when **Melder**
+is ready.
+
+The app has been rebuilt using a higher gradle and androidx. This required some
+source edits, and some translations. The minSDK is now 19 as required by the
+play store.
+
+Old Hamburg App
+=
 
 This App provides information on alternative events every day in Hamburg, Germany.
 

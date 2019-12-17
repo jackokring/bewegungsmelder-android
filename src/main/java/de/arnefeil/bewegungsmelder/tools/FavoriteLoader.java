@@ -26,7 +26,7 @@ public class FavoriteLoader {
     }
 
     public void toggleFavorites() {
-        if (!this.mainActivity.getEventLoader().isFavorited()) {
+        if (!this.mainActivity.getEventLoader().isFavourite()) {
             if (mainActivity.getEventLoader().isFiltered()) {
                 this.setFavorites(this.mainActivity.getEventLoader().getEventListFiltered());
                 this.mainActivity.getEventLoader().setEventListFavorites(this.getFavorites());
@@ -34,9 +34,9 @@ public class FavoriteLoader {
                 this.setFavorites(mainActivity.getEventLoader().getEventList());
                 this.mainActivity.getEventLoader().setEventListFavorites(this.getFavorites());
             }
-            this.mainActivity.getEventLoader().setFavorited(true);
+            this.mainActivity.getEventLoader().setFavourite(true);
         } else {
-            this.mainActivity.getEventLoader().setFavorited(false);
+            this.mainActivity.getEventLoader().setFavourite(false);
         }
         this.mainActivity.changeFavIcon();
         this.mainActivity.updateView();

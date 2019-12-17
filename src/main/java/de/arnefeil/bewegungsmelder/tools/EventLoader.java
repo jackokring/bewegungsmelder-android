@@ -32,7 +32,7 @@ public class EventLoader extends AsyncTask<Void,Void,ArrayList<Event>> {
     private JSONArray events;
     private JSONArray favorites;
     private boolean filtered;
-    private boolean favorited;
+    private boolean favourite;
     private ArrayList<Event> eventList;
     private ArrayList<Event> eventListFiltered;
     private ArrayList<Event> eventListFavorites;
@@ -87,7 +87,7 @@ public class EventLoader extends AsyncTask<Void,Void,ArrayList<Event>> {
         ArrayList<Event> dayList = new ArrayList<Event>();
         ArrayList<Event> events = this.eventList;
         if (this.filtered) events = this.eventListFiltered;
-        if (this.favorited) events = this.eventListFavorites;
+        if (this.favourite) events = this.eventListFavorites;
         if (events != null) {
             for (Event e: events) {
                 if (e.getDate().equals(date))
@@ -113,12 +113,12 @@ public class EventLoader extends AsyncTask<Void,Void,ArrayList<Event>> {
         return this.filtered;
     }
 
-    public void setFavorited(boolean favorited) {
-        this.favorited = favorited;
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
     }
 
-    public boolean isFavorited() {
-        return this.favorited;
+    public boolean isFavourite() {
+        return this.favourite;
     }
 
     public ArrayList<Event> getEventList() {
@@ -141,7 +141,7 @@ public class EventLoader extends AsyncTask<Void,Void,ArrayList<Event>> {
         Set<Date> dates = new TreeSet<Date>();
         ArrayList<Event> events = this.eventList;
         if (this.filtered) events = this.eventListFiltered;
-        if (this.favorited) events = this.eventListFavorites;
+        if (this.favourite) events = this.eventListFavorites;
         dates.add(Date.today());
         if (events != null) {
             for (Event e: events)
@@ -171,7 +171,7 @@ public class EventLoader extends AsyncTask<Void,Void,ArrayList<Event>> {
                 if (!jo.isNull("description"))
                     e.setDescription(jo.getString("description"));
                 if (!jo.isNull("more_infos"))
-                    e.setDescriiptionExtras(jo.getString("more_infos"));
+                    e.setDescriptionExtras(jo.getString("more_infos"));
                 if (!jo.isNull("price"))
                     e.setPrice(jo.getString("price"));
                 if (!jo.isNull("timeEntry"))

@@ -17,7 +17,7 @@ public class Event {
     private Time timeEntry;
     private Time timeStart;
     private String price;
-    private String descriiptionExtras;
+    private String descriptionExtras;
     private List<String> type;
     private boolean cancelled;
     private boolean favorite;
@@ -70,8 +70,8 @@ public class Event {
         this.price = price.replace("/", "\n");
     }
 
-    public void setDescriiptionExtras(String descriiptionExtras) {
-        this.descriiptionExtras = descriiptionExtras;
+    public void setDescriptionExtras(String descriptionExtras) {
+        this.descriptionExtras = descriptionExtras;
     }
 
     public void setType(List<String> type) {
@@ -126,8 +126,8 @@ public class Event {
         return price;
     }
 
-    public String getDescriiptionExtras() {
-        return descriiptionExtras;
+    public String getDescriptionExtras() {
+        return descriptionExtras;
     }
 
     public List<String> getType() {

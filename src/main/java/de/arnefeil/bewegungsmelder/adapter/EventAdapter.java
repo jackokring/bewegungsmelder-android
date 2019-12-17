@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.text.Html;
@@ -67,7 +66,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
                     ? event.getTimeEntry().toString()
                     : null);
             viewHolder.tvDescription.setText(event.getDescription());
-            viewHolder.tvDescriptionExtra.setText(event.getDescriiptionExtras());
+            viewHolder.tvDescriptionExtra.setText(event.getDescriptionExtras());
             viewHolder.tvLinks.setMovementMethod(LinkMovementMethod.getInstance());
             if (event.getLinks() != null) {
                 String links = "";

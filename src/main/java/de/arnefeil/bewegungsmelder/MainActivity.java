@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeFavIcon() {
         MenuItem item = this.menu.findItem(R.id.action_favorites);
-        if (this.eventLoader.isFavorited())
+        if (this.eventLoader.isFavourite())
             item.setIcon(R.drawable.rating_favorited);
         else
             item.setIcon(R.drawable.rating_favorite);
