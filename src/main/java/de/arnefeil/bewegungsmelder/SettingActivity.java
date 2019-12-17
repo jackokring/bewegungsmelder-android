@@ -109,7 +109,8 @@ public class SettingActivity extends AppCompatActivity {
             return sharedPreferences.getString(key, "3");
         if (key.equals("last_sync"))
             return sharedPreferences.getString(key, "keins");
-        if (key.equals("version")) return "weitere Informationen";
+        if (key.equals("version"))
+            return getResources().getString(R.string.pref_title_version);
 
         return sharedPreferences.getString(key, null);
     }
