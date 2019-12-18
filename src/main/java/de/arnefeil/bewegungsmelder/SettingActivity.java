@@ -10,7 +10,6 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-//import android.support.v7.app.ActionBarActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -108,9 +107,9 @@ public class SettingActivity extends AppCompatActivity {
         if (key.equals("sync_frequency"))
             return sharedPreferences.getString(key, "3");
         if (key.equals("last_sync"))
-            return sharedPreferences.getString(key, "keins");
+            return sharedPreferences.getString(key, getString(R.string.pref_default_last_sync));
         if (key.equals("version"))
-            return getResources().getString(R.string.pref_title_version);
+            return getString(R.string.pref_title_version);
 
         return sharedPreferences.getString(key, null);
     }

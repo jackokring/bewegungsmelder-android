@@ -85,7 +85,7 @@ public class FilterLoader {
             }
         });
         Button btnClear = (Button) dialog.findViewById(R.id.button_save);
-        btnClear.setText("Filter löschen");
+        btnClear.setText(this.mainActivity.getText(R.string.button_remove_filter));
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

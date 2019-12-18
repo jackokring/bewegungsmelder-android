@@ -148,12 +148,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkUpdateTimer() {
         SharedPreferences manager = PreferenceManager.getDefaultSharedPreferences(this);
-        String lastSync = manager.getString("last_sync", "keins");
+        String lastSync = manager.getString("last_sync",
+                getString(R.string.pref_default_last_sync));
         String syncFreq = manager.getString("sync_frequency", "3");
         int sync = 0;
         try { sync = Integer.parseInt(syncFreq); } catch (Exception e) {}
         if (sync != -1) {
-            if (lastSync.equals("keins"))
+            if (lastSync.equals(getString(R.string.pref_default_last_sync)))
                 new UpdateChecker(this).execute();
             else {
                 Date lastSyncDate = new Date(lastSync).dateInDays(sync);
@@ -267,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("ValidFragment")
     public static class EventsSectionFragment extends Fragment {
 
+        //TODO
         public static final String ARG_SECTION_NUMBER = "section_number";
 
         @Override

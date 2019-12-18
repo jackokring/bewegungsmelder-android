@@ -16,5 +16,6 @@
     <string name="button_cancel">Abbrechen</string>
     <string name="title_activity_about">Über die App</string>
     <string name="title_no_event_today">Nix los heute...</string>
+    <string name="button_remove_filter">Filter löschen</string>
 
 </resources>
