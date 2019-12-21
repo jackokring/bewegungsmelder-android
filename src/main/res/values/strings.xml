@@ -17,5 +17,12 @@
     <string name="title_activity_about">Über die App</string>
     <string name="title_no_event_today">Nix los heute...</string>
     <string name="button_remove_filter">Filter löschen</string>
+    <string name="sunday">So.</string>
+    <string name="monday">Mo.</string>
+    <string name="tuesday">Di.</string>
+    <string name="wednesday">Mi.</string>
+    <string name="thursday">Do.</string>
+    <string name="friday">Fr.</string>
+    <string name="saturday">Sa.</string>
 
 </resources>

@@ -1,5 +1,8 @@
 package de.arnefeil.bewegungsmelder.models;
 
+import de.arnefeil.bewegungsmelder.MainActivity;
+import de.arnefeil.bewegungsmelder.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -12,6 +15,15 @@ final public class Date implements Comparable<Date> {
     final private int day;
     final private int month;
     final private int year;
+    final static String[] weekdays = {
+            MainActivity.getContext().getString(R.string.sunday),
+            MainActivity.getContext().getString(R.string.monday),
+            MainActivity.getContext().getString(R.string.tuesday),
+            MainActivity.getContext().getString(R.string.wednesday),
+            MainActivity.getContext().getString(R.string.thursday),
+            MainActivity.getContext().getString(R.string.friday),
+            MainActivity.getContext().getString(R.string.saturday)
+    };
 
     public Date(String date) throws IllegalArgumentException {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -66,7 +78,6 @@ final public class Date implements Comparable<Date> {
     }
 
     public String getWeekday() {
-        String[] weekdays = {"So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."};
         Calendar cal = new GregorianCalendar();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         try {

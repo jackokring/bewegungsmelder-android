@@ -16,5 +16,13 @@
     <string name="button_cancel">Annuler</string>
     <string name="title_activity_about">À Propos</string>
     <string name="title_no_event_today">Rien de prévu aujourd\'hui...</string>
+    <string name="button_remove_filter">Effacer le filtre</string>
+    <string name="sunday">So.</string>
+    <string name="monday">Mo.</string>
+    <string name="tuesday">Di.</string>
+    <string name="wednesday">Mi.</string>
+    <string name="thursday">Do.</string>
+    <string name="friday">Fr.</string>
+    <string name="saturday">Sa.</string>
 
 </resources>

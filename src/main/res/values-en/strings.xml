@@ -17,6 +17,13 @@
     <string name="pref_title_about">About</string>
     <string name="text_no_update_available">No updates available</string>
     <string name="text_update_success">Updated OK</string>
-    <string name="button_remove_filter">Clear filter</string>
+    <string name="button_remove_filter">Clear filters</string>
+    <string name="sunday">Su</string>
+    <string name="monday">Mo</string>
+    <string name="tuesday">Tu</string>
+    <string name="wednesday">We</string>
+    <string name="thursday">Th</string>
+    <string name="friday">Fr</string>
+    <string name="saturday">Sa</string>
 
 </resources>

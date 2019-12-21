@@ -2,6 +2,7 @@ package de.arnefeil.bewegungsmelder;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
         this.eventLoader.execute();
     }
 
+    public static Context getContext(){
+        return fabulous.getApplicationContext();
+    }
 
     public void updateEvents() {
         this.eventLoader = new EventLoader(this);
@@ -251,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-            return false;//TODO
+            return false;
         }
 
         @Override
@@ -265,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("ValidFragment")
+    //@SuppressLint("ValidFragment")
     public static class EventsSectionFragment extends Fragment {
 
         //TODO
@@ -275,6 +279,10 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_event_list, container, false);
+            //so essentially the dates array is indexed by some bundle state
+            //and this loads a specific date
+            //the events for that date are loaded
+            //then it's chucked to an adapter for display
             Date date = MainActivity.dates.get(getArguments().getInt(ARG_SECTION_NUMBER));
             ArrayList<Event> events = MainActivity.getEventLoader().getEvents(date);
             ListView lvEvents = (ListView) rootView.findViewById(R.id.listView);
